@@ -14,14 +14,30 @@ export class SignUp extends React.Component {
     this.setState({ [key]: val })
   }
   signUp = async () => {
-    const { username, password, email, phone_number } = this.state
-    try {
-      // here place your signup logic
-      console.log('user successfully signed up!: ', success)
-    } catch (err) {
-      console.log('error signing up: ', err)
-    }
-  }
+    const { name, password, email, gender } = this.state
+    fetch(
+      'http://134.245.224.223:8080/user/create',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "name": "asdwqa",
+          "password": "aasd2as",
+          "email": "a3@adwzxqe.com",
+          "gender": "asd1qq"
+        }),
+      },
+    )
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+      }).catch((error) => {
+        console.error(error);
+      });
+  };
 
   render() {
     return (
@@ -31,7 +47,7 @@ export class SignUp extends React.Component {
           placeholder='Username'
           autoCapitalize="none"
           placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('username', val)}
+          onChangeText={val => this.onChangeText('name', val)}
         />
         <TextInput
           style={styles.input}
@@ -53,7 +69,7 @@ export class SignUp extends React.Component {
           placeholder='Phone Number'
           autoCapitalize="none"
           placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('phone_number', val)}
+          onChangeText={val => this.onChangeText('gender', val)}
         />
         <Button
           title='Sign Up'

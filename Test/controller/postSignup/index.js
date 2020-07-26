@@ -15,7 +15,7 @@ export class postSignup extends Component {
   //my_object = { id: 1, description: "true", status: "alive", Date: new Date().getDate(), likes: 12 };
   postData = () => {
     fetch(
-      'http://192.168.178.50:8080/post/signUp',
+      'localhost:8080/post/signUp',
       {
         method: 'POST',
         headers: {

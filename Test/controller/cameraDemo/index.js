@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { PermissionsAndroid, StyleSheet, Text, TouchableOpacity, View, Alert, ToastAndroid } from 'react-native';
+import { PermissionsAndroid, StyleSheet, Text, TouchableOpacity, View, ToastAndroid } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import CameraRoll from "@react-native-community/cameraroll";
-const RNFS = require('react-native-fs');
+//const RNFS = require('react-native-fs');
 
 export class CameraDemo extends PureComponent {
   render() {
@@ -58,7 +58,7 @@ export class CameraDemo extends PureComponent {
 
             console.log(data.uri);
             console.log(CameraRoll.saveToCameraRoll(data.uri));
-            console.log(RNFS.getAllExternalFilesDirs());
+            //console.log(RNFS.getAllExternalFilesDirs());
           });
         }
       } else {

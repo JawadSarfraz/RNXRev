@@ -13,6 +13,7 @@ import { StackNav } from './controller/stackNavigation';
 import { postSignup } from './controller/postSignup';
 import { UploadPicture } from './controller/uploadPicture';
 import { CameraDemo } from './controller/cameraDemo';
+import { AmazonDemo } from './controller/amazonDemo';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -27,10 +28,11 @@ const TabNavigator = createBottomTabNavigator(
     Slider: SliderImp,
     Pict: UploadPicture,
     StackNavigation: StackNav,
-    C: CameraDemo
+    C: CameraDemo,
+    A: AmazonDemo
   },
   {
-    initialRouteName: 'C',
+    initialRouteName: 'SignUp',
   },
 );
 
