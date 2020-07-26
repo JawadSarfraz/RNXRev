@@ -58,7 +58,7 @@ export class CameraDemo extends PureComponent {
 
             console.log(data.uri);
             console.log(CameraRoll.saveToCameraRoll(data.uri));
-            //console.log(RNFS.getAllExternalFilesDirs());
+            console.log(RNFS.getAllExternalFilesDirs());
           });
         }
       } else {
